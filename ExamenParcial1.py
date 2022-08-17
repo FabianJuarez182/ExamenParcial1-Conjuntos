@@ -4,8 +4,6 @@ A = []
 AF = []
 B = []
 BF = []
-UF = []
-IF = []
 CF = []
 DF = []
 
@@ -94,6 +92,7 @@ def menu_principal():
 
 
 def accion1():
+    UF = []
     print('\n\t\tHas elegido la Union')
     for i in range(36):
         if((AF[i]== 1 and BF[i]==1)or (AF[i]== 1 and BF[i]== 0) or (AF[i]== 0 and BF[i]==1)):
@@ -105,13 +104,14 @@ def accion1():
 
 
 def accion2():
+    IF = []
     print('\n\t\tHas elegido Intersección')
     for i in range(36):
         if(AF[i]== 1 and BF[i]==1):
             IF.append(1)
         else:
             IF.append(0)
-    print("\tConjunto Union de A y B:")
+    print("\tConjunto Intersección de A y B:")
     print (IF)
 
 def accion3():
