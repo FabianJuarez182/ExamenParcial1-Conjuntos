@@ -1,11 +1,10 @@
 dato = ""
 U = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"]
+CU = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 A = []
 AF = []
 B = []
 BF = []
-CF = []
-DF = []
 
 def mostrar_ingreso_A(dato):
     while dato != "no" or dato !="No":
@@ -115,13 +114,47 @@ def accion2():
     print (IF)
 
 def accion3():
+    DF = []
     print('\n\t\tHas elegido Diferencia')
-
+    conjunto = input("En que conjunto desea aplicar la diferencia?")
+    if(conjunto == "A" or conjunto == "a"):
+        for i in range(36):
+            if(AF[i]== 1 and BF[i]==0):
+                DF.append(1)
+            else:
+                DF.append(0)
+        print("\tDiferencia de A hacia B:")
+        print (DF)
+    elif(conjunto == "B" or conjunto == "b"):
+        for i in range(36):
+            if(AF[i]== 0 and BF[i]==1):
+                DF.append(1)
+            else:
+                DF.append(0)
+        print("\tDiferencia de B hacia A:")
+        print (DF)
 
 
 def accion4():
+    CF = []
     print('\n\t\tHas elegido Complemento')
-
+    conjunto = input("En que conjunto desea aplicar el complemento?")
+    if(conjunto == "A" or conjunto == "a"):
+        for i in range(36):
+            if(AF[i]==0 and CU[i]==1):
+                CF.append(1)
+            else:
+                CF.append(0)
+        print("\tEl complemento en A es:")
+        print (CF)
+    elif(conjunto == "B" or conjunto == "b"):
+        for i in range(36):
+            if(BF[i]== 0 and CU[i]==1):
+                CF.append(1)
+            else:
+                CF.append(0)
+        print("\tEl complemento en B es:")
+        print (CF)
     
 
 def accion5():
@@ -133,7 +166,7 @@ def accion5():
                 bandera = True
                 break
         if (bandera == True):
-            print(f"El elemento {D} si se ha encontrado {conjunto}!")
+            print(f"El elemento {D} si se ha encontrado en el conjunto {conjunto}!")
         else:
             print(f"El elemento {D} no se ha encontrado en el conjunto {conjunto}!")
     elif(conjunto == "B" or conjunto == "b"):
@@ -142,14 +175,14 @@ def accion5():
                 bandera = True
                 break
         if (bandera == True):
-            print(f"El elemento {D} si se ha encontrado {conjunto}!")
+            print(f"El elemento {D} si se ha encontrado en el conjunto {conjunto}!")
         else:
             print(f"El elemento {D} no se ha encontrado en el conjunto {conjunto}!")
 
 
 def salir():
     print('Saliendo')
-
+    exit()
 
 if __name__ == '__main__':
     menu_principal()
