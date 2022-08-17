@@ -1,5 +1,3 @@
-from this import s
-
 dato = ""
 U = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"]
 A = []
@@ -96,23 +94,35 @@ def menu_principal():
 
 
 def accion1():
-    print('\n \t\tHas elegido la Union')
-    UF = AF
-    for element in BF:
-        if ()
+    print('\n\t\tHas elegido la Union')
+    for i in range(36):
+        if((AF[i]== 1 and BF[i]==1)or (AF[i]== 1 and BF[i]== 0) or (AF[i]== 0 and BF[i]==1)):
+            UF.append(1)
+        else:
+            UF.append(0)
+    print("\tConjunto Union de A y B:")
     print (UF)
 
 
 def accion2():
-    print('Has elegido Intersección')
-
+    print('\n\t\tHas elegido Intersección')
+    for i in range(36):
+        if(AF[i]== 1 and BF[i]==1):
+            IF.append(1)
+        else:
+            IF.append(0)
+    print("\tConjunto Union de A y B:")
+    print (IF)
 
 def accion3():
-    print('Has elegido Diferencia')
+    print('\n\t\tHas elegido Diferencia')
+
 
 
 def accion4():
-    print('Has elegido Complemento')
+    print('\n\t\tHas elegido Complemento')
+
+    
 
 def accion5():
     D = input('Ingrese el dato que desea buscar en el conjunto:')
